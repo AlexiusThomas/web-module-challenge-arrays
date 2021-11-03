@@ -67,10 +67,14 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 
 function is31Flavors(/*your code here*/){
  /*your code here*/
-
+ } else {
+ return false
+}
 
 //conditional inside here - if its true return true else return false ** it should be exactly 31 items
 }
+
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
 
@@ -85,10 +89,10 @@ Use the addFlavor function below to do the following:
 
 // 2 params array, string (which is holding the place for the new flavour)
 
-function addFlavor(/*your code here*/){
- /*your code here*/
+function addFlavor(array, newFlavor){
+ let newArray = array.unshift(newFlavor)
  //use unshift to add the new flavour to the beginning of the received  arrayy
- //return the array
+ return newArray
 }
 
 
@@ -103,13 +107,17 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-
-// 1parameter which wil be aplace holder fore the array
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
- // use pop to remove the last item
- // return array
+function removeLastFlavor(array){
+  array.pop()
+  return array
 }
+
+// // 1parameter which wil be aplace holder fore the array
+// function removeLastFlavor(/*your code here*/){
+//  /*your code here*/
+//  // use pop to remove the last item
+//  // return array
+// }
 
 
 
@@ -147,14 +155,21 @@ Use the removeFlavorByName function below to do the following:
 */
 
 //  2parameters arrayy  and the string we want to remove exact match
-function removeFlavorByName(/*your code here*/){
+function removeFlavorByName(array, flavor){
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === flavor){
+      array.splice(1,1)
+    }
+  }
+  return array
+}
   /*your code here*/
   // loop throught thr array and check for an exact match for the string if it exists then remove it 
   // usiing  splice and splice takes 2 arguments - the start and how manyy items to delete
 
 // .splice(start, how many items to delete);
 // outside of the looop return the array
-}
+
 
 
 
@@ -183,17 +198,17 @@ Use the filterByWord function below to do the following:
 function filterByWord(array, string){
   /*your code here*/
   // create a  new array to  push our results to
-  const filered = [];
+  const filtered = [];
   // loop through the provided array and check every index
-for (let i = 0; i <array.length; i++){
+for (let i = 0; i < array.length; i++) {
   //if thei ndx included the string
   if(array[i].includes(string)){
   //push it to the new array
-  FileSystemDirectoryReader.push(array[i]);
+  filtered.push(array[i]);
 }
 }
   //outisde of tthe loop return the new array
-return FileSystemDirectoryReader;
+return filterByWord;
 }
 
 console.log('task 7', filterByWord(originalFlavors,  'Chocolate'));
