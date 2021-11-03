@@ -45,8 +45,8 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(array){
+  return [...array];
 }    
 
 
@@ -65,16 +65,17 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 
 /// taking 1 paramter - it's holding the place for an array
 
-function is31Flavors(/*your code here*/){
- /*your code here*/
- } else {
- return false
+function is31Flavors(array){
+ if(array.length === 31){
+ return true 
+} else{
+ return false;
 }
 }
+console.log(is31Flavors);
 
-//conditional inside here - if its true return true else return false ** it should be exactly 31 items
-}
 
+//conditional inside here - if its true return true else return false ** it should be exactly 31 item
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -90,11 +91,12 @@ Use the addFlavor function below to do the following:
 
 // 2 params array, string (which is holding the place for the new flavour)
 
-function addFlavor(array, newFlavor){
- let newArray = array.unshift(newFlavor)
+function addFlavor(array, string){
+  array.unshift(string);
  //use unshift to add the new flavour to the beginning of the received  arrayy
- return newArray
+ return array;
 }
+console.log(addFlavor(originalFlavors, "Rainbow Sherbet"));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -134,9 +136,9 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 // 2 parameter array / number (holding the place for an iindex)
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
-  // arrayy[0]
+function getFlavorByIndex(array, number){
+  return array[number];
+  
 }
 
 
@@ -159,10 +161,10 @@ Use the removeFlavorByName function below to do the following:
 function removeFlavorByName(array, flavor){
   for(let i = 0; i < array.length; i++){
     if(array[i] === flavor){
-      array.splice(1,1)
+      array.splice(i, 1)
     }
   }
-  return array
+  return array;
 }
   /*your code here*/
   // loop throught thr array and check for an exact match for the string if it exists then remove it 
@@ -209,10 +211,11 @@ for (let i = 0; i < array.length; i++) {
 }
 }
   //outisde of tthe loop return the new array
-return filterByWord;
+return filtered;
 }
 
-console.log('task 7', filterByWord(originalFlavors,  'Chocolate'));
+
+
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
 /* STRETCH 1: Write a function that returns the average number of words in an array. You should be able to use this function for any array, but can test with originalFlavors.
