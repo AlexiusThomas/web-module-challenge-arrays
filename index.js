@@ -70,6 +70,7 @@ function is31Flavors(/*your code here*/){
  } else {
  return false
 }
+}
 
 //conditional inside here - if its true return true else return false ** it should be exactly 31 items
 }
